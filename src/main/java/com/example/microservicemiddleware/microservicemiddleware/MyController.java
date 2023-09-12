@@ -1,7 +1,10 @@
 package com.example.microservicemiddleware.microservicemiddleware;
 
 import com.example.microservicemiddleware.microservicemiddleware.Service.ApiService;
+import com.example.microservicemiddleware.microservicemiddleware.models.CustomerRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,9 +16,9 @@ public class MyController {
         this.apiService = apiService;
     }
 
-    @GetMapping("/callUpstream")
-    public Object callUpstreamService() {
-        Object response = apiService.callUpstreamService();
+    @PostMapping("/callUpstream")
+    public Object callUpstreamService(@RequestBody CustomerRequest RequestBodyreq) {
+        Object response = apiService.callUpstreamService(RequestBodyreq);
         return "Response from Upstream Service: " + response;
     }
 }

@@ -1,7 +1,9 @@
 package com.example.microservicemiddleware.microservicemiddleware.Service;
 
+import com.example.microservicemiddleware.microservicemiddleware.CustomerResponse;
+import com.example.microservicemiddleware.microservicemiddleware.OTP;
+import com.example.microservicemiddleware.microservicemiddleware.OTPRes;
 import com.example.microservicemiddleware.microservicemiddleware.models.CustomerRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,16 +16,16 @@ public class ApiService {
     public ApiService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-    public Object callUpstreamService(CustomerRequest customerRequest) {
+    public CustomerResponse callUpstreamService(CustomerRequest customerRequest) {
         String url = "http://localhost:8080/getcustomer"; // Replace with the actual URL of the upstream service
         // Make the HTTP request
-        Object response = restTemplate.postForObject(url, customerRequest, String.class);
+        CustomerResponse response = restTemplate.postForObject(url, customerRequest, CustomerResponse.class);
         return response;
     }
-    public Object callotp() {
-        String url = "localhost:8080/otp"; // Replace with the actual URL of the second API
+    public Object callotp(OTP otp) {
+        String url = "http://localhost:8080/otp"; // Replace with the actual URL of the second API
         // Make the HTTP request
-        Object response = restTemplate.getForObject(url, Object.class);
+        OTPRes response = restTemplate.postForObject(url,otp, OTPRes.class);
         return response;
     }
 }

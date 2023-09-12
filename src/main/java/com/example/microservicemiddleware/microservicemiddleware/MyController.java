@@ -2,7 +2,6 @@ package com.example.microservicemiddleware.microservicemiddleware;
 
 import com.example.microservicemiddleware.microservicemiddleware.Service.ApiService;
 import com.example.microservicemiddleware.microservicemiddleware.models.CustomerRequest;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,13 @@ public class MyController {
 
     @PostMapping("/callUpstream")
     public Object callUpstreamService(@RequestBody CustomerRequest RequestBodyreq) {
-        Object response = apiService.callUpstreamService(RequestBodyreq);
-        return "Response from Upstream Service: " + response;
+        CustomerResponse response = apiService.callUpstreamService(RequestBodyreq);
+        if (response.getGetCustomer360SummaryRep().getMsgBdy().getCustDtlsRp() != null) {
+            OTP otp=new OTP();
+            otp.setNum("1234");
+            Object res = apiService.callotp(otp);
+            return res;
+        }
+        return "Response from Upstream Service: " + "ERROR";
     }
 }

@@ -1,4 +1,4 @@
-package com.example.microservicemiddleware.microservicemiddleware;
+package com.example.microservicemiddleware.microservicemiddleware.Resp;
 
 public class OTPRes {
     String msg;

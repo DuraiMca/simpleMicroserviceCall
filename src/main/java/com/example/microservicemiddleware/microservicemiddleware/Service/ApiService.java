@@ -1,8 +1,8 @@
 package com.example.microservicemiddleware.microservicemiddleware.Service;
 
-import com.example.microservicemiddleware.microservicemiddleware.CustomerResponse;
-import com.example.microservicemiddleware.microservicemiddleware.OTP;
-import com.example.microservicemiddleware.microservicemiddleware.OTPRes;
+import com.example.microservicemiddleware.microservicemiddleware.Resp.CustomerResponse;
+import com.example.microservicemiddleware.microservicemiddleware.models.OTP;
+import com.example.microservicemiddleware.microservicemiddleware.Resp.OTPRes;
 import com.example.microservicemiddleware.microservicemiddleware.models.CustomerRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

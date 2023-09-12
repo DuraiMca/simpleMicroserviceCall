@@ -1,4 +1,4 @@
-package com.example.microservicemiddleware.microservicemiddleware;
+package com.example.microservicemiddleware.microservicemiddleware.Resp;
 
 public class MsgHdr {
     private String rslt;

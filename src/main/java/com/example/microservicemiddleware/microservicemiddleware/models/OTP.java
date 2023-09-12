@@ -1,4 +1,4 @@
-package com.example.microservicemiddleware.microservicemiddleware;
+package com.example.microservicemiddleware.microservicemiddleware.models;
 
 public class OTP {
     String num;

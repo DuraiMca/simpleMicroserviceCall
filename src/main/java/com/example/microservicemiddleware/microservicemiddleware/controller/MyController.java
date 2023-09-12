@@ -1,7 +1,9 @@
-package com.example.microservicemiddleware.microservicemiddleware;
+package com.example.microservicemiddleware.microservicemiddleware.controller;
 
+import com.example.microservicemiddleware.microservicemiddleware.Resp.CustomerResponse;
 import com.example.microservicemiddleware.microservicemiddleware.Service.ApiService;
 import com.example.microservicemiddleware.microservicemiddleware.models.CustomerRequest;
+import com.example.microservicemiddleware.microservicemiddleware.models.OTP;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

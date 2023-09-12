@@ -1,4 +1,4 @@
-package com.example.microservicemiddleware.microservicemiddleware;
+package com.example.microservicemiddleware.microservicemiddleware.Resp;
 
 public class CustomerResponse {
     private GetCustomer360SummaryRep getCustomer360SummaryRep;

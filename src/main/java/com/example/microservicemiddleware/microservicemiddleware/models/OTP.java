@@ -1,13 +1,16 @@
 package com.example.microservicemiddleware.microservicemiddleware.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class OTP {
-    String num;
+    @JsonProperty("mobileNumber")
+    String mobileNumber;
 
     public String getNum() {
-        return num;
+        return mobileNumber;
     }
 
     public void setNum(String num) {
-        this.num = num;
+        this.mobileNumber = num;
     }
 }
